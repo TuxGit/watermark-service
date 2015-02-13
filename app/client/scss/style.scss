@@ -1,0 +1,73 @@
+
+/* --------- includes --------- */
+// @import "compass/reset";
+// @import "compass/css3";
+@import "helpers/mixins";
+
+
+/* --------- vars --------- */
+$footer-height: 228px;
+$container-padding: 10px;
+$container-width: 1000px + 2*$container-padding;
+
+/* --------- colors --------- */
+$text-color: #5c7b98;
+$title-color: #00b9fe;
+$link-color: #00b9fe;
+$link-color_hover: #613993;
+
+
+/* --------- base --------- */
+body {  //html, body
+    width: 100%;
+    height: 100%;
+    font: 14px/1.2em Arial, sans-serif;
+    background-color: #fff;
+    color: $text-color;
+}
+    html {
+        height: 100%;        
+    }
+
+.container {
+    margin: 0 auto;
+    width: $container-width;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+    min-width: $container-width;
+    position: relative;
+
+    @include clearfix();
+}
+
+.wrapper {    
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    z-index: 1;
+    min-width: $container-width + 2*$container-padding;
+}
+
+.wrapper .empty {
+    position: relative;
+    height: $footer-height;
+    z-index: 0;
+}
+
+
+
+/* --------- header --------- */
+
+
+
+
+
+/* --------- footer --------- */
+.footer {
+    position: relative;
+    z-index: 2;
+    margin-top: -$footer_height;
+    min-width: $container-width + 2*$container-padding;
+    height: $footer-height;
+}
