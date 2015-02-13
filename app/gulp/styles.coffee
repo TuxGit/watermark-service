@@ -7,6 +7,7 @@ autoprefixer = require 'gulp-autoprefixer'
 minifyCss    = require 'gulp-minify-css'
 paths        = require './paths'
 pkg          = require '../package.json'
+addsrc       = require 'gulp-add-src'
 
 
 gulp.task 'compass', () ->
@@ -29,7 +30,8 @@ gulp.task 'compass', () ->
 
 
 gulp.task 'styles', ['compass'], () ->
-	return gulp.src ['*.css'], cwd: 'client/styles'
+	return gulp.src paths.bower_css, cwd: 'client'
+        .pipe addsrc ['*.css'], cwd: 'client/styles'
 		.pipe concat 'all.min.css'
 		.pipe autoprefixer(
 			'Android >= ' + pkg.browsers.android

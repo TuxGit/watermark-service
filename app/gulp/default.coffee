@@ -5,19 +5,19 @@ gulp        = require 'gulp'
 # gulp [--debug]
 # gulp build --prod [--debug]
 
-gulp.task 'build', ->
-	return runSequence(
-		# 'clean:images'
-		'copy'
-		'jade'
-		'styles'
-		'scripts'
-	)
+gulp.task 'build', ['copy', 'jade', 'styles', 'scripts'], ->
+	# return runSequence(
+	# 	# 'clean:images'
+	# 	'copy'
+	# 	'jade'
+	# 	'styles'
+	# 	'scripts'
+	# )
 
-gulp.task 'default', ->
-	return runSequence(
-		'jade'
-		'compass'
-		# 'coffee'
-		'watch'
-	)
+gulp.task 'default', ['jade', 'compass', 'watch'], ->
+	# return runSequence(
+	# 	'jade'
+	# 	'compass'
+	# 	# 'coffee'
+	# 	'watch'
+	# )
