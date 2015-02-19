@@ -1,0 +1,43 @@
+﻿doctype html
+html
+	head
+		title Watermark generator
+		link(rel='stylesheet' href='css/style.css')
+	body
+		.container
+			.wrapper
+				.content
+					h1.content__title Генератор водяных знаков
+					.content__result
+				.sidebar
+					h2.sidebar__title Настройки
+					.sidebar__settings
+						form(action='' method='').form
+							.form__upload
+								label(for='original-image').setting__name Исходное изображение
+								.upload-block
+									input(type='file' id='original-image').upload-block__input-file
+									input(type='text' disabled).upload-block__input-text
+									.upload-block__button
+										img(src='img/download.png')
+								label(for='watermark').setting__name Водяной знак
+								.upload-block
+									input(type='file' id='watermark').upload-block__input-file
+									input(type='text' disabled).upload-block__input-text
+									.upload-block__button
+										img(src='img/download.png')
+							.form__position
+								.setting__name Положение
+								.position__block
+									img(src='img/position.png')
+							.form__opacity
+								.setting__name Прозрачность
+								.opacity__block
+									img(src='img/slider.png')
+							.form__buttons
+								button(type='reset' value='Сброс').form__buttons-reset Сброс
+								button(type='submit' value='Скачать').form__buttons-submit Скачать
+			footer.footer
+				p.footer__content &copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его
+		script(type='text/javascript' src='js/vendor/jquery-1.11.1.min.js')
+		script(type='text/javascript' src='js/main.js')
