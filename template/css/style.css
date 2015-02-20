@@ -75,12 +75,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*ROBOTO*/
 @font-face {
     font-family: 'robotolight';
-    src: url('fonts/roboto/light/roboto-light.eot');
-    src: url('fonts/roboto/light/roboto-light.eot?#iefix') format('embedded-opentype'),
-         url('fonts/roboto/light/roboto-light.woff2') format('woff2'),
-         url('fonts/roboto/light/roboto-light.woff') format('woff'),
-         url('fonts/roboto/light/roboto-light.ttf') format('truetype'),
-         url('fonts/roboto/light/roboto-light.svg#robotolight') format('svg');
+    src: url('../fonts/roboto/light/roboto-light.eot');
+    src: url('../fonts/roboto/light/roboto-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/light/roboto-light.woff2') format('woff2'),
+         url('../fonts/roboto/light/roboto-light.woff') format('woff'),
+         url('../fonts/roboto/light/roboto-light.ttf') format('truetype'),
+         url('../fonts/roboto/light/roboto-light.svg#robotolight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -88,12 +88,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @font-face {
     font-family: 'robotomedium';
-    src: url('fonts/roboto/medium/roboto-medium.eot');
-    src: url('fonts/roboto/medium/roboto-medium.eot?#iefix') format('embedded-opentype'),
-         url('fonts/roboto/medium/roboto-medium.woff2') format('woff2'),
-         url('fonts/roboto/medium/roboto-medium.woff') format('woff'),
-         url('fonts/roboto/medium/roboto-medium.ttf') format('truetype'),
-         url('fonts/roboto/medium/roboto-medium.svg#robotomedium') format('svg');
+    src: url('../fonts/roboto/medium/roboto-medium.eot');
+    src: url('../fonts/roboto/medium/roboto-medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/medium/roboto-medium.woff2') format('woff2'),
+         url('../fonts/roboto/medium/roboto-medium.woff') format('woff'),
+         url('../fonts/roboto/medium/roboto-medium.ttf') format('truetype'),
+         url('../fonts/roboto/medium/roboto-medium.svg#robotomedium') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -101,11 +101,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*SEGOE UI*/
 @font-face {
     font-family: 'segoeuil';
-    src: url('fonts/segoe/segoeui-light.eot');
-    src: url('fonts/segoe/segoeui-light.eot?#iefix') format('embedded-opentype'),
-         url('fonts/segoe/segoeui-light.woff') format('woff'),
-         url('fonts/segoe/segoeui-light.ttf') format('truetype'),
-         url('fonts/segoe/segoeui-light.svg#segoeui-light') format('svg');
+    src: url('../fonts/segoe/segoeui-light.eot');
+    src: url('../fonts/segoe/segoeui-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/segoe/segoeui-light.woff') format('woff'),
+         url('../fonts/segoe/segoeui-light.ttf') format('truetype'),
+         url('../fonts/segoe/segoeui-light.svg#segoeui-light') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -113,12 +113,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*FIRA SANS*/
 @font-face {
     font-family: 'fira_sanslight';
-    src: url('fonts/fira/firasans-light.eot');
-    src: url('fonts/fira/firasans-light.eot?#iefix') format('embedded-opentype'),
-         url('fonts/fira/firasans-light.woff2') format('woff2'),
-         url('fonts/fira/firasans-light.woff') format('woff'),
-         url('fonts/fira/firasans-light.ttf') format('truetype'),
-         url('fonts/fira/firasans-light.svg#fira_sanslight') format('svg');
+    src: url('../fonts/fira/firasans-light.eot');
+    src: url('../fonts/fira/firasans-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fira/firasans-light.woff2') format('woff2'),
+         url('../fonts/fira/firasans-light.woff') format('woff'),
+         url('../fonts/fira/firasans-light.ttf') format('truetype'),
+         url('../fonts/fira/firasans-light.svg#fira_sanslight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -149,6 +149,7 @@ body {
 
 /* line 49, ../sass/style.scss */
 .wrapper {
+  padding-top: 60px;
   min-width: 960px;
   display: table-cell;
   vertical-align: middle;
@@ -171,7 +172,7 @@ body {
 
 /* line 67, ../sass/style.scss */
 .content__title {
-  font: 36px 'SegoeUI-light';
+  font: 36px 'segoeuil';
   color: #fff;
   margin-bottom: 53px;
   padding: 9px 22px 0 22px;
@@ -191,7 +192,7 @@ body {
   padding-top: 27px;
   width: 260px;
   background-color: #f1f1f5;
-  font-family: 'Roboto-light';
+  font-family: 'robotolight';
   color: #2e3641;
   display: table-cell;
 }
@@ -217,27 +218,38 @@ body {
 }
 
 /* line 104, ../sass/style.scss */
-.form__upload, .form__position {
+.form__upload {
+  position: relative;
   border-bottom: 1px solid #f4c3c2;
   margin-bottom: 17px;
 }
 
 /* line 108, ../sass/style.scss */
-.form__upload:after, .form__position:after, .form__opacity:after {
-  content: url(../img/arrow.png);
-  position: relative;
-  left: 120px;
-  bottom: -12px;
-  width: 19px;
-  height: 10px;
+.form__upload:before{
+  position: absolute;
+  z-index: 5;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -9px;
+  content: '';
+  border-top: 10px solid #f1f1f5;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
 }
 
-@-moz-document url-prefix() {
-  /* line 118, ../sass/style.scss */
-  .form__upload:after, .form__position:after, .form__opacity:after {
-    bottom: -12px;
-  }
+.form__upload:after{
+  position: absolute;
+  z-index: 4;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -9px;
+  content: '';
+  border-top: 10px solid #f97e76;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
 }
+
+
 /* block upload files */
 /* line 125, ../sass/style.scss */
 .upload-block {
@@ -248,7 +260,7 @@ body {
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
-  margin: 0 auto 17px;
+  margin: 0 auto 30px;
 }
 
 /* line 135, ../sass/style.scss */
@@ -286,24 +298,11 @@ body {
   left: 1px;
 }
 
-/* block position */
-/* line 167, ../sass/style.scss */
-.position__block, .opacity__block {
-  text-align: center;
-}
-
-/* block opacity */
-/* line 173, ../sass/style.scss */
-.form__opacity {
-  border-bottom: 1px solid #f4c3c2;
-  margin-bottom: 56px;
-}
-
 /* block buttons */
 /* line 180, ../sass/style.scss */
 .form__buttons {
   padding: 0 10px;
-  margin-bottom: 24px;
+  margin: 40px 0 0;
 }
 
 /* line 184, ../sass/style.scss */
@@ -360,7 +359,7 @@ body {
 .footer {
   width: 960px;
   color: #fff;
-  font: 12px 'Fira-sanslight';
+  font: 12px 'fira_sanslight';
   text-align: center;
   display: table-footer-group;
 }
@@ -635,6 +634,8 @@ body {
 .line--x{
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
   height: 1px;
   width: 100%;
@@ -644,6 +645,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   margin: 0 auto;
   height: 100%;
   width: 1px;
@@ -717,8 +719,7 @@ body {
 
 .lang__btn{
   display: block;
-  box-sizing:border-box;
-  padding: 3px 1px;
+  line-height: 34px;
   width: 43px;
   height: 34px;
   font-family: 'segoeuil';
