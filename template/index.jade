@@ -1,6 +1,7 @@
 ﻿doctype html
-html
+html(lang='ru')
 	head
+		meta(charset='UTF-8')
 		title Watermark generator
 		link(rel='stylesheet' href='css/style.css')
 	body
@@ -26,18 +27,105 @@ html
 									input(type='text' disabled).upload-block__input-text
 									.upload-block__button
 										img(src='img/download.png')
-							.form__position
-								.setting__name Положение
-								.position__block
-									img(src='img/position.png')
-							.form__opacity
-								.setting__name Прозрачность
-								.opacity__block
-									img(src='img/slider.png')
+						form.control__form
+							.form__block
+								.block__header
+									h3.p Положение
+									// кнопки переключения вида
+									.switch-type
+										button.btn--four 4
+										button.btn--one.btn--active 1
+								.position
+									// настройки для первого вида (один вотермарк)
+									.position__block.block--coordinates
+										.position__view
+											// настройки визуального перемещения вотермарка
+											table.view__table
+												tbody.table__body
+													tr.table__row
+														td.table__cell.cell--active(data-x='left', data-y='top')
+														td.table__cell(data-x='center', data-y='top')
+														td.table__cell(data-x='right', data-y='top')
+													tr.table__row
+														td.table__cell(data-x='left', data-y='middle')
+														td.table__cell(data-x='center', data-y='middle')
+														td.table__cell(data-x='right', data-y='middle')
+													tr.table__row
+														td.table__cell(data-x='left', data-y='bottom')
+														td.table__cell(data-x='center', data-y='bottom')
+														td.table__cell(data-x='right', data-y='bottom')
+										.position__regulate
+											// настройка регулировочных инпутов
+											.regulate__block
+												p.p-coordinate X
+												input.input--data(type='text', name='valueX', value='0')
+												.regulate__trigger.trigger--arrow
+													button.btn--up(data-step='x-up') Больше
+													button.btn--down(data-step='x-down') Меньше
+											.regulate__block
+												p.p-coordinate Y
+												input.input--data(type='text', name='valueY', value='0')
+												.regulate__trigger.trigger--arrow
+													button.btn--up(data-step='y-up') Больше
+													button.btn--down(data-step='y-down') Меньше
+									// настройки для второго вида (четыре вотермарка), блок скрыт по умолчанию
+									.position__block.block--borders.block--hidden
+										// визуальные линии, которые отображают границы вотермарка
+										.position__view
+											.view__borders
+												span.border__line.line--x горизонтальная линия
+												span.border__line.line--y вертикальная линия
+											// фон для визуальных линий
+											table.view__table--grid
+												tbody.table__body
+													tr.table__row
+														td.table__cell--grid
+														td.table__cell--grid
+														td.table__cell--grid
+													tr.table__row
+														td.table__cell--grid
+														td.table__cell--grid
+														td.table__cell--grid
+													tr.table__row
+														td.table__cell--grid
+														td.table__cell--grid
+														td.table__cell--grid
+										// настройка регулировочных инпутов
+										.position__regulate
+											.regulate__block.block--vertical
+												input.input--data(type='text', name='borderY', value='1')
+												.regulate__trigger.trigger--borders
+													button.btn--up(data-border='y-b-up') Больше
+													button.btn--down(data-border='y-b-down') Меньше
+											.regulate__block.block--horizontal
+												input.input--data(type='text', name='borderX', value='1')
+												.regulate__trigger.trigger--borders
+													button.btn--up(data-border='x-b-up') Больше
+													button.btn--down(data-border='x-b-down') Меньше
+							.form__block
+								.block__header
+									h3.p Прозрачность
+									.range-slider							
 							.form__buttons
 								button(type='reset' value='Сброс').form__buttons-reset Сброс
 								button(type='submit' value='Скачать').form__buttons-submit Скачать
 			footer.footer
 				p.footer__content &copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его
+				// социальные кнопки и кнопки смены языка
+		.social__settings
+			ul.settings__lang
+				li.lang__item
+					a.lang__btn(href='/ru/') РУС
+				li.lang__item
+					a.lang__btn(href='/eng/') ENG
+			.socials
+				ul.socials__list
+					li.socials__item
+						a.social__btn--fb(href='#') Facebook
+					li.socials__item
+						a.social__btn--tw(href='#') Twitter
+					li.socials__item
+						a.social__btn--vk(href='#') Vkontakte
+				button.social__btn--like Лайкнуть
 		script(type='text/javascript' src='js/vendor/jquery-1.11.1.min.js')
 		script(type='text/javascript' src='js/main.js')
