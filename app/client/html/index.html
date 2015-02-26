@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<title>Ipad Air Wi-Fi | ЭпплShop</title>
+		<title>Watermark service | Сервис добавления водяных знаков</title>
 		<link href="../bower_components/normalize-css/normalize.css" rel="stylesheet" />
 		<link href="../styles/fonts.css" rel="stylesheet" />
 		<link href="../styles/images.css" rel="stylesheet" />
@@ -18,17 +18,58 @@
 	</head>
 
 	<body>
-		<div id="my-app" class="wrapper">
-			<div class="mainwrapper">
-				<header class="header">
-					<div class="container"></div>
-				</header>
+		<div class="container">
+			<div class="wrapper">
+				<div class="container">
+					<div class="wrapper">
+						<div class="content">
+							<h1 class="content__title">Генератор водяных знаков</h1>
+							<div class="content__result"></div>
+						</div>
+						<div class="sidebar">
+							<h2 class="sidebar__title">Настройки</h2>
+							<div class="sidebar__settings">
+								<form action="" method="" class="upload">
+									<label for="original-image" class="setting__name">Исходное изображение</label>
+									<div class="upload-block">
+										<input type="file" id="original-image" class="upload-block__input-file">
+										<input type="text" disabled class="upload-block__input-text">
+										<div class="upload-block__button"><img src="../img/download.png">
+										</div>
+									</div>
+									<label for="watermark" class="setting__name">Водяной знак</label>
+									<div class="upload-block">
+										<input type="file" id="watermark" class="upload-block__input-file">
+										<input type="text" disabled class="upload-block__input-text">
+										<div class="upload-block__button"><img src="../img/download.png">
+										</div>
+									</div>
+								</form>
+								<form action="" method="" class="settings">
+									<div class="setting__position">
+										<div class="setting__name">Положение</div>
+										<div class="position__block"><img src="../img/position.png" class="position__img">
+										</div>
+									</div>
+									<div class="setting__opacity">
+										<div class="setting__name">Прозрачность</div>
+										<div class="opacity__block"><img src="../img/slider.png" class="opacity__img">
+										</div>
+									</div>
+									<div class="setting__buttons">
+										<button type="reset" value="Сброс" class="setting__buttons-reset">Сброс</button>
+										<button type="submit" value="Скачать" class="setting__buttons-submit">Скачать</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="empty"></div>
+			<footer class="footer">
+				<p class="footer__content">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
+			</footer>
 		</div>
-		<footer class="footer">
-			<div class="container"></div>
-		</footer>
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../scripts/script.js"></script>
 	</body>

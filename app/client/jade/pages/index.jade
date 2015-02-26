@@ -20,22 +20,22 @@ block content
 							input(type='file' id='original-image').upload-block__input-file
 							input(type='text' disabled).upload-block__input-text
 							.upload-block__button
-								img(src='img/download.png')
+								img(src='../img/download.png')
 						label(for='watermark').setting__name Водяной знак
 						.upload-block
 							input(type='file' id='watermark').upload-block__input-file
 							input(type='text' disabled).upload-block__input-text
 							.upload-block__button
-								img(src='img/download.png')
+								img(src='../img/download.png')
 					form(action='' method='').settings
 						.setting__position
 							.setting__name Положение
 							.position__block
-								img(src='img/position.png')
+								img(src='../img/position.png' class='position__img')
 						.setting__opacity
 							.setting__name Прозрачность
 							.opacity__block
-								img(src='img/slider.png')
+								img(src='../img/slider.png' class='opacity__img')
 						.setting__buttons
 								button(type='reset' value='Сброс').setting__buttons-reset Сброс
 								button(type='submit' value='Скачать').setting__buttons-submit Скачать
