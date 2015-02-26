@@ -1,18 +1,32 @@
 
-$(document).ready(function () {
+var common = {
 
-//	КАСТОМИЗАЦИЯ INPUT FILE
+    $inputFile: '.js-input-file',
+    $inputTextFile: '.js-input-txt-file',
+    $uploadBlock: '.js-upload-block',
+    $uploadBtn: '.js-upload-btn',
 
-	// повесим события клика на input text и img, чтобы срабатывал элемент file  
+    initEvents: function() {
+        var self = this;
+        $(window).on({
+            load: function() {
+                $(self.$uploadBtn).on('click', $.proxy(self.opnUploadWindow, self));
+                $(self.$inputFile).on('change', $.proxy(self.setFileName, self));
+            }
+        });
+    },
 
-	$(".upload-block__button, .upload-block__input-text").click(function(){
-	    $(this).parent().children("input[type='file']").trigger("click");
-	});	
+    opnUploadWindow: function(e) {
+        var $this = $(e.currentTarget);
+        $this.closest(this.$uploadBlock).find(this.$inputFile).click();
+    },
 
-	// получаем имя загружаемого файла и помещаем в input text
+    setFileName: function(e) {
+        var $this = $(e.currentTarget);
+        $this.closest(this.$uploadBlock).find(this.$inputTextFile).val($this.val().split('\\').pop());
+    }
+};
 
-	$(".upload-block__input-file").change(function(){
-    	$(this).parent().children("input[type='text']").val($(this).val().split('\\').pop());
-	});
-
+$(document).ready(function() {
+    common.initEvents();
 });

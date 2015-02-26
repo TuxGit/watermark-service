@@ -16,16 +16,16 @@ block content
 				.sidebar__settings
 					form(action='' method='').upload
 						label(for='original-image').setting__name Исходное изображение
-						.upload-block
-							input(type='file' id='original-image').upload-block__input-file
-							input(type='text' disabled).upload-block__input-text
-							.upload-block__button
+						.upload-block.js-upload-block
+							input(type='file' id='original-image').upload-block__input-file.js-input-file
+							input(type='text' disabled).upload-block__input-text.js-input-txt-file
+							.upload-block__button.js-upload-btn
 								img(src='../img/download.png')
 						label(for='watermark').setting__name Водяной знак
-						.upload-block
-							input(type='file' id='watermark').upload-block__input-file
-							input(type='text' disabled).upload-block__input-text
-							.upload-block__button
+						.upload-block.js-upload-block
+							input(type='file' id='watermark').upload-block__input-file.js-input-file
+							input(type='text' disabled).upload-block__input-text.js-input-txt-file
+							.upload-block__button.js-upload-btn
 								img(src='../img/download.png')
 					form(action='' method='').settings
 						.setting__position
