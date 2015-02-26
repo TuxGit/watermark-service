@@ -34,14 +34,12 @@ html(lang="ru")
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   body
-    .wrapper#my-app
-      .mainwrapper
-        include ../partials/header
+    .container
+      .wrapper
         
         block content
 
-      .empty
-    include ../partials/footer
+      include ../partials/footer
 
     case env
       when 'dev'

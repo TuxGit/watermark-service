@@ -15,21 +15,6 @@ $submitBtnColor: #f97e76;   /* bg-color submit button */
 $resetBtnColor-h: #B4C5D0;  /* bg-color reset button-hover */
 $submitBtnColor-h: #F56C63; /* bg-color submit button-hover */
 
-/* --------- connecting fonts --------- */
-
-@font-face {
-    font-family: 'Roboto-light';
-    src: url('../fonts/roboto/light/Roboto-Light.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Fira-sanslight';
-    src: url('../fonts/fira/firasans-light.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'SegoeUI-light';
-    src: url('../fonts/segoe/segoeui-light.ttf') format('truetype');
-}
-
 /* --------- main styles --------- */
 
 html { 
