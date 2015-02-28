@@ -1,109 +1,147 @@
-.icon-sprite, .icon-arrow-h, .icon-arrow-v, .icon-download, .icon-fb, .icon-l-grid, .icon-l-one, .icon-like, .icon-point-dw, .icon-point-up, .icon-toggle, .icon-tw, .icon-vk {
-  background-image: url('../img/icon-s437d6f0c88.png');
-  background-repeat: no-repeat;
+.point-up, .point-dw_hover, .point-up_hover, .point-dw, .l-one, .arrow-h, .arrow-v, .download, .fb, .fb_hover, .l-grid, .l-grid_active, .l-grid_hover, .like, .like_hover, .l-one, .l-one_active, .l-one_hover, .toggle, .toggle_hover, .tw, .tw_hover, .vk, .vk_hover{
+  background: url(../img/sprites.png) no-repeat;
 }
 
-.icon-arrow-h {
-  background-position: 0 -27px;
-  height: 9px;
-  width: 29px;
-}
-
-.icon-arrow-v {
-  background-position: -21px -36px;
-  height: 30px;
-  width: 11px;
-}
-
-.icon-download {
-  background-position: 0 -36px;
-  height: 16px;
-  width: 21px;
-}
-
-.icon-fb {
-  background-position: 0 -289px;
-  height: 27px;
-  width: 15px;
-}
-.icon-fb:hover, .icon-fb.fb-hover {
-  background-position: -15px -289px;
-}
-
-.icon-l-grid {
-  background-position: 0 -159px;
-  height: 19px;
-  width: 19px;
-}
-.icon-l-grid:hover, .icon-l-grid.l-grid-hover {
-  background-position: 0 -140px;
-}
-.icon-l-grid:active, .icon-l-grid.l-grid-active {
-  background-position: 0 -178px;
-}
-
-.icon-l-one {
-  background-position: -13px -8px;
-  height: 19px;
-  width: 19px;
-}
-.icon-l-one:hover, .icon-l-one.l-one-hover {
-  background-position: 0 -121px;
-}
-.icon-l-one:active, .icon-l-one.l-one-active {
-  background-position: -13px -102px;
-}
-
-.icon-like {
-  background-position: 0 -348px;
-  height: 32px;
-  width: 26px;
-}
-.icon-like:hover, .icon-like.like-hover {
-  background-position: 0 -316px;
-}
-
-.icon-point-dw {
-  background-position: 0 -102px;
-  height: 8px;
-  width: 13px;
-}
-.icon-point-dw:hover, .icon-point-dw.point-dw-hover {
-  background-position: 0 -8px;
-}
-
-.icon-point-up {
+.point-up{
   background-position: 0 0;
-  height: 8px;
   width: 13px;
+  height: 8px;
 }
-.icon-point-up:hover, .icon-point-up.point-up-hover {
+
+.point-dw_hover{
+  background-position: 0 -7.984375px ;
+  width: 13px;
+  height: 8px;
+}
+
+.point-up_hover{
   background-position: -13px 0;
+  width: 13px;
+  height: 8px;
 }
 
-.icon-toggle {
-  background-position: 0 -241px;
-  height: 24px;
+.point-dw{
+  background-position: -13px -8px ;
+  width: 13px;
+  height: 8px;
+}
+
+.l-one{
+  background-position: -7px -16px ;
+  width: 19px;
+  height: 19px;
+}
+
+.arrow-h{
+  background-position: -1px -35px ;
+  width: 29px;
+  height: 9px;
+}
+
+.arrow-v{
+  background-position: -0.000003814697265625px -45px ;
+  width: 11px;
+  height: 30px;
+}
+
+.download{
+  background-position: -4.000004px -78.000004px ;
+  width: 39px;
+  height: 27px;
+}
+
+.fb{
+  background-position: 0 -113px ;
+  width: 15px;
+  height: 27px;
+}
+
+.fb_hover{
+  background-position: -15.000003814697266px -113px ;
+  width: 15px;
+  height: 27px;
+}
+
+.l-grid{
+  background-position: -27.000003814697266px -16px ;
+  width: 19px;
+  height: 19px;
+}
+
+.l-grid_active{
+  background-position: -47.000003814697266px -16px ;
+  width: 19px;
+  height: 19px;
+}
+
+.l-grid_hover{
+  background-position: -67.00000381469727px -16px ;
+  width: 19px;
+  height: 19px;
+}
+
+.like{
+  background-position: 0 -149.0000114440918px ;
+  width: 26px;
+  height: 32px;
+}
+
+.like_hover{
+  background-position: -28.000003814697266px -149.0000114440918px ;
+  width: 26px;
+  height: 32px;
+}
+
+.l-one{
+  background-position: 0 -189.0000114440918px ;
+  width: 19px;
+  height: 19px;
+}
+
+.l-one_active{
+  background-position: -20.000003814697266px -189.0000114440918px ;
+  width: 19px;
+  height: 19px;
+}
+
+.l-one_hover{
+  background-position: -40.000003814697266px -189.0000114440918px ;
+  width: 19px;
+  height: 19px;
+}
+
+.toggle{
+  background-position: 0 -214px ;
   width: 24px;
-}
-.icon-toggle:hover, .icon-toggle.toggle-hover {
-  background-position: 0 -265px;
+  height: 24px;
 }
 
-.icon-tw {
-  background-position: 0 -219px;
-  height: 22px;
+.toggle_hover{
+  background-position: -25.000003814697266px -214px ;
+  width: 24px;
+  height: 24px;
+}
+
+.tw{
+  background-position: -49.000003814697266px -37px ;
   width: 28px;
-}
-.icon-tw:hover, .icon-tw.tw-hover {
-  background-position: 0 -197px;
+  height: 22px;
 }
 
-.icon-vk {
-  background-position: 0 -66px;
-  height: 18px;
-  width: 32px;
+.tw_hover{
+  background-position: -49.000003814697266px -60px ;
+  width: 28px;
+  height: 22px;
 }
-.icon-vk:hover, .icon-vk.vk-hover {
-  background-position: 0 -84px;
+
+.vk{
+  background-position: -35.000003814697266px -114px ;
+  width: 32px;
+  height: 18px;
+}
+
+.vk_hover{
+  background-position: -68.00000381469727px -114px ;
+  width: 32px;
+  height: 18px;
 }

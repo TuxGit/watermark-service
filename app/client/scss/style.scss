@@ -147,12 +147,20 @@ body {
     display: block;
     border: 0;
     width: 39px;
+    height: 27px;
     text-align: center;
     float: left;
     position: relative;
     z-index: 100;
     top: -1px;
     left: 1px;
+    background: $elemColor;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 /* block position */
@@ -192,6 +200,7 @@ body {
     height: 42px;
     border: 0;
     cursor: pointer;
+    font-weight: bold;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
