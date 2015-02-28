@@ -59,7 +59,7 @@ body {
 .content__title {
     font: 36px 'SegoeUI-light';
     color: #fff;
-    margin-bottom: 53px;
+    margin: 0 0 53px 0;
     padding: 9px 22px 0 22px;
 }
 .content__result {
@@ -72,7 +72,7 @@ body {
 /* --------- sidebar --------- */
 
 .sidebar {
-    padding-top: 27px;
+    padding-top: 18px;
     width: 260px;
     background-color: #f1f1f5;
     font-family: 'Roboto-light';
@@ -82,7 +82,8 @@ body {
 .sidebar__title {
     text-align: center;
     font-size: 26px;
-    margin: 0 auto 37px;
+    font-weight: normal;
+    margin: 0 auto 31px;
     overflow: hidden;
     width: 220px;
 }
@@ -101,7 +102,7 @@ body {
     content: url(../img/arrow.png);
     position: relative;
     left: 120px; 
-    bottom: -12px;
+    bottom: -13px;
     width: 19px;
     height: 10px;
 }
@@ -122,7 +123,7 @@ body {
     -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: pointer;
-    margin: 0 auto 17px;
+    margin: 0 auto 15px;
 }
 .upload-block__input-file {
     display: none;
@@ -159,12 +160,20 @@ body {
 .position__block, .opacity__block {
     text-align: center;
 }
+.position__img {
+    display: block;
+    margin: 0 auto;
+}
 
 /* block opacity */
 
 .setting__opacity {
     border-bottom: 1px solid $botBorderColor;
     margin-bottom: 56px;
+}
+.opacity__img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* block buttons */
@@ -221,4 +230,5 @@ body {
 .footer__content {
     height: 50px;
     line-height: 50px;
+    margin: 0;
 }

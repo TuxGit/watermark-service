@@ -66,7 +66,7 @@ body {
 
 /* --------- sidebar --------- */
 .sidebar {
-  padding-top: 21px;
+  padding-top: 18px;
   width: 260px;
   background-color: #f1f1f5;
   font-family: 'Roboto-light';
@@ -78,7 +78,7 @@ body {
   text-align: center;
   font-size: 26px;
   font-weight: normal;
-  margin: 0 auto 30px;
+  margin: 0 auto 31px;
   overflow: hidden;
   width: 220px;
 }
@@ -88,13 +88,13 @@ body {
 }
 
 .setting__name {
-  margin: 0 0 4px 20px;
+  margin: 0 0 6px 20px;
   display: block;
 }
 
 .upload, .setting__position {
   border-bottom: 1px solid #f4c3c2;
-  margin-bottom: 11px;
+  margin-bottom: 17px;
 }
 
 .upload:after, .setting__position:after, .setting__opacity:after {
@@ -120,7 +120,7 @@ body {
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
-  margin: 0 auto 14px;
+  margin: 0 auto 15px;
 }
 
 .upload-block__input-file {
@@ -156,26 +156,24 @@ body {
 }
 
 /* block position */
-.position__block {
+.position__block, .opacity__block {
   text-align: center;
 }
+
 .position__img {
   display: block;
   margin: 0 auto;
 }
 
 /* block opacity */
-
-.opacity__block {
-  text-align: center;
-}
-.opacity__img {
-  display: block;
-  margin: 0 auto;
-}
 .setting__opacity {
   border-bottom: 1px solid #f4c3c2;
   margin-bottom: 56px;
+}
+
+.opacity__img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* block buttons */
@@ -199,7 +197,6 @@ body {
   -moz-border-radius: 3px;
   border-radius: 3px;
   font-size: 18px;
-  font-weight: bold;
   color: #fff;
   vertical-align: bottom;
   transition: all 0.5s ease;
