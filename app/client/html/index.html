@@ -47,14 +47,98 @@
 								</form>
 								<form action="" method="" class="settings">
 									<div class="setting__position">
-										<div class="setting__name">Положение</div>
-										<div class="position__block"><img src="../img/position.png" class="position__img">
+										<div class="setting__name">Положение
+											<div class="switch-type">
+												<button data-div="borders" class="btn--four js-switch-btn">4</button>
+												<button data-div="coordinates" class="btn--active btn--one js-switch-btn">1</button>
+											</div>
+										</div>
+										<div class="position__block block--coordinates active">
+											<div class="position__view">
+												<table class="view__table">
+													<tbody class="table__body">
+														<tr class="table__row">
+															<td data-x="left" data-y="top" class="table__cell cell--active"></td>
+															<td data-x="center" data-y="top" class="table__cell"></td>
+															<td data-x="right" data-y="top" class="table__cell"></td>
+														</tr>
+														<tr class="table__row">
+															<td data-x="left" data-y="middle" class="table__cell"></td>
+															<td data-x="center" data-y="middle" class="table__cell"></td>
+															<td data-x="right" data-y="middle" class="table__cell"></td>
+														</tr>
+														<tr class="table__row">
+															<td data-x="left" data-y="bottom" class="table__cell"></td>
+															<td data-x="center" data-y="bottom" class="table__cell"></td>
+															<td data-x="right" data-y="bottom" class="table__cell"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="position__regulate">
+												<div class="regulate__block">
+													<p class="p-coordinate">X</p>
+													<input type="text" name="valueX" value="0" class="input--data">
+													<div class="regulate__trigger trigger--arrow">
+														<button data-step="x-up" class="btn--up">Больше</button>
+														<button data-step="x-down" class="btn--down">Меньше</button>
+													</div>
+												</div>
+												<div class="regulate__block">
+													<p class="p-coordinate">Y</p>
+													<input type="text" name="valueY" value="0" class="input--data">
+													<div class="regulate__trigger trigger--arrow">
+														<button data-step="y-up" class="btn--up">Больше</button>
+														<button data-step="y-down" class="btn--down">Меньше</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="position__block block--borders block--hidden">
+											<div class="position__view">
+												<div class="view__borders"><span class="border__line line--x">горизонтальная линия</span><span class="border__line line--y">вертикальная линия</span>
+												</div>
+												<table class="view__table--grid">
+													<tbody class="table__body">
+														<tr class="table__row">
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+														</tr>
+														<tr class="table__row">
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+														</tr>
+														<tr class="table__row">
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="position__regulate">
+												<div class="regulate__block block--vertical">
+													<input type="text" name="borderY" value="1" class="input--data">
+													<div class="regulate__trigger trigger--borders">
+														<button data-border="y-b-up" class="btn--up">&Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;</button>
+														<button data-border="y-b-down" class="btn--down">&Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;</button>
+													</div>
+												</div>
+												<div class="regulate__block block--horizontal">
+													<input type="text" name="borderX" value="1" class="input--data">
+													<div class="regulate__trigger trigger--borders">
+														<button data-border="x-b-up" class="btn--up">&Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;</button>
+														<button data-border="x-b-down" class="btn--down">&Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;</button>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="setting__opacity">
 										<div class="setting__name">Прозрачность</div>
-										<div class="opacity__block"><img src="../img/slider.png" class="opacity__img">
-										</div>
+										<div class="range-slider"></div>
 									</div>
 									<div class="setting__buttons">
 										<button type="reset" value="Сброс" class="setting__buttons-reset">Сброс</button>
@@ -71,6 +155,7 @@
 			</footer>
 		</div>
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
 		<script src="../scripts/script.js"></script>
 	</body>
 
