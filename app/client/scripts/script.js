@@ -1,4 +1,3 @@
-
 var common = {
 
     $inputFile: '.js-input-file',
@@ -16,6 +15,7 @@ var common = {
                 $(self.$uploadBtn).on('click', $.proxy(self.opnUploadWindow, self));
                 $(self.$inputFile).on('change', $.proxy(self.setFileName, self));
                 $(self.$switchBtn).on('click', $.proxy(self.showCurrentBox, self));
+                $('.social__btn--like').on('click', $.proxy(self.showSocialBtns, self));
             }
         });
     },
@@ -34,7 +34,7 @@ var common = {
         var $this = $(e.currentTarget);
 
         $this.addClass('btn--active')
-             .siblings().removeClass('btn--active')
+            .siblings().removeClass('btn--active')
             .closest('.setting__position').find('.block--' + $this.data('div')).addClass('active')
             .siblings().removeClass('active');
 
@@ -42,12 +42,17 @@ var common = {
     },
 
     initRangeSlider: function() {
-        $( ".range-slider" ).slider({
+        $(".range-slider").slider({
             range: "min",
             value: 100,
             min: 1,
             max: 100
         });
+    },
+
+    showSocialBtns: function(e) {
+        e.preventDefault();
+        $(e.currentTarget).closest('.socials').toggleClass('social--open');
     }
 };
 
