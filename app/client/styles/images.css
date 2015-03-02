@@ -45,9 +45,14 @@
 }
 
 .download{
-  background-position: -4.000004px -78.000004px ;
-  width: 39px;
+  width: 31px;
   height: 27px;
+  background: url(../img/icon-s437d6f0c88.png) 9px -36px no-repeat;
+}
+.icon-download {
+  background-position: 0 -36px;
+  height: 16px;
+  width: 21px;
 }
 
 .fb{

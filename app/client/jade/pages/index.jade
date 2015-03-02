@@ -30,12 +30,71 @@ block content
 					form(action='' method='').settings
 						.setting__position
 							.setting__name Положение
-							.position__block
-								img(src='../img/position.png' class='position__img')
+								.switch-type
+									button(data-div='borders').btn--four.js-switch-btn 4
+									button(data-div='coordinates').btn--active.btn--one.js-switch-btn 1
+							.position__block.block--coordinates.active
+								.position__view
+									table.view__table
+										tbody.table__body
+											tr.table__row
+												td.table__cell.cell--active(data-x='left', data-y='top')
+												td.table__cell(data-x='center', data-y='top')
+												td.table__cell(data-x='right', data-y='top')
+											tr.table__row
+												td.table__cell(data-x='left', data-y='middle')
+												td.table__cell(data-x='center', data-y='middle')
+												td.table__cell(data-x='right', data-y='middle')
+											tr.table__row
+												td.table__cell(data-x='left', data-y='bottom')
+												td.table__cell(data-x='center', data-y='bottom')
+												td.table__cell(data-x='right', data-y='bottom')
+								.position__regulate
+									.regulate__block
+										p.p-coordinate X
+										input.input--data(type='text', name='valueX', value='0')
+										.regulate__trigger.trigger--arrow
+											button.btn--up(data-step='x-up') Больше
+											button.btn--down(data-step='x-down') Меньше
+									.regulate__block
+										p.p-coordinate Y
+										input.input--data(type='text', name='valueY', value='0')
+										.regulate__trigger.trigger--arrow
+											button.btn--up(data-step='y-up') Больше
+											button.btn--down(data-step='y-down') Меньше
+							.position__block.block--borders.block--hidden
+								.position__view
+									.view__borders
+										span.border__line.line--x горизонтальная линия
+										span.border__line.line--y вертикальная линия
+									table.view__table--grid
+										tbody.table__body
+											tr.table__row
+												td.table__cell--grid
+												td.table__cell--grid
+												td.table__cell--grid
+											tr.table__row
+												td.table__cell--grid
+												td.table__cell--grid
+												td.table__cell--grid
+											tr.table__row
+												td.table__cell--grid
+												td.table__cell--grid
+												td.table__cell--grid
+								.position__regulate
+									.regulate__block.block--vertical
+										input.input--data(type='text', name='borderY', value='1')
+										.regulate__trigger.trigger--borders
+											button.btn--up(data-border='y-b-up') &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;
+											button.btn--down(data-border='y-b-down') &Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;
+									.regulate__block.block--horizontal
+										input.input--data(type='text', name='borderX', value='1')
+										.regulate__trigger.trigger--borders
+											button.btn--up(data-border='x-b-up') &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;
+											button.btn--down(data-border='x-b-down') &Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;
 						.setting__opacity
 							.setting__name Прозрачность
-							.opacity__block
-								img(src='../img/slider.png' class='opacity__img')
+							.range-slider
 						.setting__buttons
-								button(type='reset' value='Сброс').setting__buttons-reset Сброс
-								button(type='submit' value='Скачать').setting__buttons-submit Скачать
+							button(type='reset' value='Сброс').setting__buttons-reset Сброс
+							button(type='submit' value='Скачать').setting__buttons-submit Скачать

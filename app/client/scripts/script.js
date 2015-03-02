@@ -1,18 +1,61 @@
+var common = {
 
-$(document).ready(function () {
+    $inputFile: '.js-input-file',
+    $inputTextFile: '.js-input-txt-file',
+    $uploadBlock: '.js-upload-block',
+    $uploadBtn: '.js-upload-btn',
+    $switchBtn: '.js-switch-btn',
 
-//	КАСТОМИЗАЦИЯ INPUT FILE
+    initEvents: function() {
+        var self = this;
+        $(window).on({
+            load: function() {
+                self.initRangeSlider();
 
-	// повесим события клика на input text и img, чтобы срабатывал элемент file  
+                $(self.$uploadBtn).on('click', $.proxy(self.opnUploadWindow, self));
+                $(self.$inputFile).on('change', $.proxy(self.setFileName, self));
+                $(self.$switchBtn).on('click', $.proxy(self.showCurrentBox, self));
+                $('.social__btn--like').on('click', $.proxy(self.showSocialBtns, self));
+            }
+        });
+    },
 
-	$(".upload-block__button, .upload-block__input-text").click(function(){
-	    $(this).parent().children("input[type='file']").trigger("click");
-	});	
+    opnUploadWindow: function(e) {
+        var $this = $(e.currentTarget);
+        $this.closest(this.$uploadBlock).find(this.$inputFile).click();
+    },
 
-	// получаем имя загружаемого файла и помещаем в input text
+    setFileName: function(e) {
+        var $this = $(e.currentTarget);
+        $this.closest(this.$uploadBlock).find(this.$inputTextFile).val($this.val().split('\\').pop());
+    },
 
-	$(".upload-block__input-file").change(function(){
-    	$(this).parent().children("input[type='text']").val($(this).val().split('\\').pop());
-	});
+    showCurrentBox: function(e) {
+        var $this = $(e.currentTarget);
 
+        $this.addClass('btn--active')
+            .siblings().removeClass('btn--active')
+            .closest('.setting__position').find('.block--' + $this.data('div')).addClass('active')
+            .siblings().removeClass('active');
+
+        e.preventDefault();
+    },
+
+    initRangeSlider: function() {
+        $(".range-slider").slider({
+            range: "min",
+            value: 100,
+            min: 1,
+            max: 100
+        });
+    },
+
+    showSocialBtns: function(e) {
+        e.preventDefault();
+        $(e.currentTarget).closest('.socials').toggleClass('social--open');
+    }
+};
+
+$(document).ready(function() {
+    common.initEvents();
 });
