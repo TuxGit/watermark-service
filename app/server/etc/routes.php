@@ -17,7 +17,7 @@ $routes = array(
 		or "url": ...
 	}
 	*/
-	'/api\upload/' => array(
+	'/api\/upload/' => array(
 		'controller' => 'ApiCtrl',
 		'action' => 'upload'),
 

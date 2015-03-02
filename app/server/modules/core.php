@@ -83,6 +83,7 @@ class App {
 						else
 							$output = (new $ctrl())->$action();
 
+						// print_r($output); 
 						print $output;
 					}
 				} catch (Exception $e) {

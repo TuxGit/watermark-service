@@ -80,7 +80,21 @@ class ApiCtrl
 	public function download()
 	{
 		// $APP = & get_instance();
+
+		// test
+		/*
+		$_SESSION['image'] = array('filename' => 'image.jpg', 'width' => 651, 'height' => 534);
+		$_SESSION['watermark'] = array('filename' => 'watermark.png', 'width' => 216, 'height' => 223);
+		$_POST['type'] = 'grid';
+		// $_POST['x'] = 300;
+		// $_POST['y'] = -60;
+		$_POST['x'] = 20;
+		$_POST['y'] = 10;
+		$_POST['opacity'] = 50;
+		*/
+		// end test
 		
+
 		if ( !isset($_SESSION['image']) || !isset($_SESSION['watermark']) )
 			throw new Exception("Загрузите сначала изображения!", 1);
 
@@ -99,10 +113,14 @@ class ApiCtrl
 			$_type, $_x, $_y, $_op
 		);
 		$res = array(
-			"url": $file['url']
+			"url" => $file['url']
 		);
+		// tmp, clear vars
+		unset($_SESSION['image']);
+		unset($_SESSION['watermark']);
+		// session_destroy();
 
-		return $res;
+		return json_encode($res);
 	}
 
 	private function addWatermark($img_file, $wm_file, $type, $x, $y, $op)
@@ -116,14 +134,43 @@ class ApiCtrl
 
 		if ($type === 'one') {
 			// use uuid
-			$filename = substr(session_id(), 2, 5) . $img_file['filename'] . $wm_file['filename'];
+			$filename = substr(session_id(), 2, 5) . '__' . $img_file['filename'] . $wm_file['filename'];
 			$img->merge($wm, $x, $y, $op)->saveToFile($upload_dir . $filename);
 
 			$file['filename'] = $filename;
 			$file['url'] = $APP->config['upload_url'] . $filename;
 		} else if ($type === 'grid') {
 			// в цикле мерджим вотермарки от центра с нитервалом х, у
+
+			// https://php.net/manual/ru/function.round.php
+			$N_x = round( $img_file['width']/($x + $wm_file['width']), 0, PHP_ROUND_HALF_EVEN );
+			$N_y = round( $img_file['height']/($y + $wm_file['height']), 0, PHP_ROUND_HALF_EVEN );
+
+			$X_0 = $img_file['width']/2 - $N_x/2*($x + $wm_file['width']);
+			$Y_0 = $img_file['height']/2 - $N_y/2*($y + $wm_file['height']);
+			
+			$_x = $X_0;
+			$_y = $Y_0;
+			// echo $N_x, ' ', $N_y;
+			for ($i=0; $i < $N_x; $i++) {
+				
+				$img = $img->merge($wm, $_x, $_y, $op);
+				
+				for ($j=0; $j < $N_y-1; $j++) {
+					$_y += $y + $wm_file['height'];
+					// $_x += $x + $wm_file['width'];
+					$img = $img->merge($wm, $_x, $_y, $op);
+				}
+				$_y = $Y_0;
+				// $_y += $y + $wm_file['height'];
+				$_x += $x + $wm_file['width'];
+			}
+			$filename = substr(session_id(), 2, 7) . '__' . $img_file['filename'] . $wm_file['filename'];
+			$img->saveToFile($upload_dir . $filename);
+			$file['filename'] = $filename;
+			$file['url'] = $APP->config['upload_url'] . $filename;
 		}
+
 		return $file;
 	}
 

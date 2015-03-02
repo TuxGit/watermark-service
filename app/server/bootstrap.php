@@ -17,3 +17,4 @@ function &get_instance()
 session_start();
 // global $APP;
 $APP = new App($config, $routes);
+$APP->init();
