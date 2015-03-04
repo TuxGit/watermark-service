@@ -11,28 +11,30 @@ block content
 			.content
 				h1.content__title Генератор водяных знаков
 				.content__result
+					div.image
+					div.watermark
 			.sidebar
 				h2.sidebar__title Настройки
 				.sidebar__settings
 					form(action='' method='').upload
 						label(for='original-image').setting__name Исходное изображение
 						.upload-block.js-upload-block
-							input(type='file' id='original-image').upload-block__input-file.js-input-file
-							input(type='text' disabled).upload-block__input-text.js-input-txt-file
+							input(type='file' id='original-image' name='image').upload-block__input-file.js-input-file
+							input(type='text' placeholder="загрузите картинку..." disabled).upload-block__input-text.js-input-txt-file
 							.upload-block__button.js-upload-btn
 								img(src='../img/download.png')
 						label(for='watermark').setting__name Водяной знак
 						.upload-block.js-upload-block
-							input(type='file' id='watermark').upload-block__input-file.js-input-file
-							input(type='text' disabled).upload-block__input-text.js-input-txt-file
+							input(type='file' id='watermark' name='watermark').upload-block__input-file.js-input-file
+							input(type='text' placeholder="загрузите картинку..." disabled).upload-block__input-text.js-input-txt-file
 							.upload-block__button.js-upload-btn
 								img(src='../img/download.png')
 					form(action='' method='').settings
 						.setting__position
 							.setting__name Положение
 								.switch-type
-									button(data-div='borders').btn--four.js-switch-btn 4
-									button(data-div='coordinates').btn--active.btn--one.js-switch-btn 1
+									button(data-div='borders', type="button").btn--four.js-switch-btn 4
+									button(data-div='coordinates', type="button").btn--active.btn--one.js-switch-btn 1
 							.position__block.block--coordinates.active
 								.position__view
 									table.view__table
@@ -52,16 +54,16 @@ block content
 								.position__regulate
 									.regulate__block
 										p.p-coordinate X
-										input.input--data(type='text', name='valueX', value='0')
-										.regulate__trigger.trigger--arrow
-											button.btn--up(data-step='x-up') Больше
-											button.btn--down(data-step='x-down') Меньше
+										input.input--data(type='text', name='valueX', value='0')#x
+										//- .regulate__trigger.trigger--arrow
+										//- 	button.btn--up(data-step='x-up') Больше
+										//- 	button.btn--down(data-step='x-down') Меньше
 									.regulate__block
 										p.p-coordinate Y
-										input.input--data(type='text', name='valueY', value='0')
-										.regulate__trigger.trigger--arrow
-											button.btn--up(data-step='y-up') Больше
-											button.btn--down(data-step='y-down') Меньше
+										input.input--data(type='text', name='valueY', value='0')#y
+										//- .regulate__trigger.trigger--arrow
+										//- 	button.btn--up(data-step='y-up') Больше
+										//- 	button.btn--down(data-step='y-down') Меньше
 							.position__block.block--borders.block--hidden
 								.position__view
 									.view__borders

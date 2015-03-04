@@ -24,7 +24,10 @@
 					<div class="wrapper">
 						<div class="content">
 							<h1 class="content__title">Генератор водяных знаков</h1>
-							<div class="content__result"></div>
+							<div class="content__result">
+								<div class="image"></div>
+								<div class="watermark"></div>
+							</div>
 						</div>
 						<div class="sidebar">
 							<h2 class="sidebar__title">Настройки</h2>
@@ -32,15 +35,15 @@
 								<form action="" method="" class="upload">
 									<label for="original-image" class="setting__name">Исходное изображение</label>
 									<div class="upload-block js-upload-block">
-										<input type="file" id="original-image" class="upload-block__input-file js-input-file">
-										<input type="text" disabled class="upload-block__input-text js-input-txt-file">
+										<input type="file" id="original-image" name="image" class="upload-block__input-file js-input-file">
+										<input type="text" placeholder="загрузите картинку..." disabled class="upload-block__input-text js-input-txt-file">
 										<div class="upload-block__button js-upload-btn"><img src="../img/download.png">
 										</div>
 									</div>
 									<label for="watermark" class="setting__name">Водяной знак</label>
 									<div class="upload-block js-upload-block">
-										<input type="file" id="watermark" class="upload-block__input-file js-input-file">
-										<input type="text" disabled class="upload-block__input-text js-input-txt-file">
+										<input type="file" id="watermark" name="watermark" class="upload-block__input-file js-input-file">
+										<input type="text" placeholder="загрузите картинку..." disabled class="upload-block__input-text js-input-txt-file">
 										<div class="upload-block__button js-upload-btn"><img src="../img/download.png">
 										</div>
 									</div>
@@ -49,8 +52,8 @@
 									<div class="setting__position">
 										<div class="setting__name">Положение
 											<div class="switch-type">
-												<button data-div="borders" class="btn--four js-switch-btn">4</button>
-												<button data-div="coordinates" class="btn--active btn--one js-switch-btn">1</button>
+												<button data-div="borders" type="button" class="btn--four js-switch-btn">4</button>
+												<button data-div="coordinates" type="button" class="btn--active btn--one js-switch-btn">1</button>
 											</div>
 										</div>
 										<div class="position__block block--coordinates active">
@@ -78,19 +81,11 @@
 											<div class="position__regulate">
 												<div class="regulate__block">
 													<p class="p-coordinate">X</p>
-													<input type="text" name="valueX" value="0" class="input--data">
-													<div class="regulate__trigger trigger--arrow">
-														<button data-step="x-up" class="btn--up">Больше</button>
-														<button data-step="x-down" class="btn--down">Меньше</button>
-													</div>
+													<input type="text" name="valueX" value="0" id="x" class="input--data">
 												</div>
 												<div class="regulate__block">
 													<p class="p-coordinate">Y</p>
-													<input type="text" name="valueY" value="0" class="input--data">
-													<div class="regulate__trigger trigger--arrow">
-														<button data-step="y-up" class="btn--up">Больше</button>
-														<button data-step="y-down" class="btn--down">Меньше</button>
-													</div>
+													<input type="text" name="valueY" value="0" id="y" class="input--data">
 												</div>
 											</div>
 										</div>
@@ -175,6 +170,8 @@
 		</div>
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+		<script src="../bower_components/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+		<script src="../bower_components/jquery-file-upload/js/jquery.fileupload.js"></script>
 		<script src="../scripts/script.js"></script>
 	</body>
 

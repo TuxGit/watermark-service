@@ -60,8 +60,28 @@ body {
 .content__result {
   width: 650px;
   height: 535px;
-  background-image: url(../img/test-picture.jpg);
+  background-color: #fff;
   margin: 0 auto 25px;
+  position: relative;
+}
+.content__result .image {
+  background-image: url(../img/test-picture.jpg);
+  width: 650px;
+  height: 535px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.content__result .watermark {
+  background-image: url(../img/favicon.jpg);
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  opacity: 1;
 }
 
 /* --------- sidebar --------- */
@@ -284,6 +304,10 @@ body {
   text-align: center;
   font-family: 'Roboto-light', arial, sans-serif;
   font-size: 16px;
+}
+
+.my-spinner {
+  float: left;
 }
 
 .input--data {
