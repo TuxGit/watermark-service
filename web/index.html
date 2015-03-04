@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<title>Ipad Air Wi-Fi | ЭпплShop</title>
+		<title>Watermark service | Сервис добавления водяных знаков</title>
 		<link href="assets/styles/all.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -15,18 +15,157 @@
 	</head>
 
 	<body>
-		<div id="my-app" class="wrapper">
-			<div class="mainwrapper">
-				<header class="header">
-					<div class="container"></div>
-				</header>
-				<p>Hello World!</p>
+		<div class="container">
+			<div class="wrapper">
+				<div class="container">
+					<div class="wrapper">
+						<div class="content">
+							<h1 class="content__title">Генератор водяных знаков</h1>
+							<div class="content__result">
+								<div class="image"></div>
+								<div class="watermark"></div>
+							</div>
+						</div>
+						<div class="sidebar">
+							<h2 class="sidebar__title">Настройки</h2>
+							<div class="sidebar__settings">
+								<form action="" method="" class="upload">
+									<label for="original-image" class="setting__name">Исходное изображение</label>
+									<div class="upload-block js-upload-block">
+										<input type="file" id="original-image" name="image" class="upload-block__input-file js-input-file">
+										<input type="text" placeholder="загрузите картинку..." disabled class="upload-block__input-text js-input-txt-file">
+										<div class="upload-block__button js-upload-btn"><img src="../img/download.png">
+										</div>
+									</div>
+									<label for="watermark" class="setting__name">Водяной знак</label>
+									<div class="upload-block js-upload-block">
+										<input type="file" id="watermark" name="watermark" class="upload-block__input-file js-input-file">
+										<input type="text" placeholder="загрузите картинку..." disabled class="upload-block__input-text js-input-txt-file">
+										<div class="upload-block__button js-upload-btn"><img src="../img/download.png">
+										</div>
+									</div>
+								</form>
+								<form action="" method="" class="settings">
+									<div class="setting__position">
+										<div class="setting__name">Положение
+											<div class="switch-type">
+												<button data-div="borders" type="button" class="btn--four js-switch-btn">4</button>
+												<button data-div="coordinates" type="button" class="btn--active btn--one js-switch-btn">1</button>
+											</div>
+										</div>
+										<div class="position__block block--coordinates active">
+											<div class="position__view">
+												<table class="view__table">
+													<tbody class="table__body">
+														<tr class="table__row">
+															<td data-x="left" data-y="top" class="table__cell cell--active"></td>
+															<td data-x="center" data-y="top" class="table__cell"></td>
+															<td data-x="right" data-y="top" class="table__cell"></td>
+														</tr>
+														<tr class="table__row">
+															<td data-x="left" data-y="middle" class="table__cell"></td>
+															<td data-x="center" data-y="middle" class="table__cell"></td>
+															<td data-x="right" data-y="middle" class="table__cell"></td>
+														</tr>
+														<tr class="table__row">
+															<td data-x="left" data-y="bottom" class="table__cell"></td>
+															<td data-x="center" data-y="bottom" class="table__cell"></td>
+															<td data-x="right" data-y="bottom" class="table__cell"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="position__regulate">
+												<div class="regulate__block">
+													<p class="p-coordinate">X</p>
+													<input type="text" name="valueX" value="0" id="x" class="input--data">
+												</div>
+												<div class="regulate__block">
+													<p class="p-coordinate">Y</p>
+													<input type="text" name="valueY" value="0" id="y" class="input--data">
+												</div>
+											</div>
+										</div>
+										<div class="position__block block--borders block--hidden">
+											<div class="position__view">
+												<div class="view__borders"><span class="border__line line--x">горизонтальная линия</span><span class="border__line line--y">вертикальная линия</span>
+												</div>
+												<table class="view__table--grid">
+													<tbody class="table__body">
+														<tr class="table__row">
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+														</tr>
+														<tr class="table__row">
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+														</tr>
+														<tr class="table__row">
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+															<td class="table__cell--grid"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="position__regulate">
+												<div class="regulate__block block--vertical">
+													<input type="text" name="borderY" value="1" class="input--data">
+													<div class="regulate__trigger trigger--borders">
+														<button data-border="y-b-up" class="btn--up">&Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;</button>
+														<button data-border="y-b-down" class="btn--down">&Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;</button>
+													</div>
+												</div>
+												<div class="regulate__block block--horizontal">
+													<input type="text" name="borderX" value="1" class="input--data">
+													<div class="regulate__trigger trigger--borders">
+														<button data-border="x-b-up" class="btn--up">&Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;</button>
+														<button data-border="x-b-down" class="btn--down">&Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="setting__opacity">
+										<div class="setting__name">Прозрачность</div>
+										<div class="range-slider"></div>
+									</div>
+									<div class="setting__buttons">
+										<button type="reset" value="Сброс" class="setting__buttons-reset">Сброс</button>
+										<button type="submit" value="Скачать" class="setting__buttons-submit">Скачать</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="empty"></div>
+			<footer class="footer">
+				<p class="footer__content">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
+			</footer>
 		</div>
-		<footer class="footer">
-			<div class="container"></div>
-		</footer>
+		<div class="social__settings">
+			<ul class="settings__lang">
+				<li class="lang__item"><a href="/ru/" class="lang__btn">РУС</a>
+				</li>
+				<li class="lang__item"><a href="/eng/" class="lang__btn">ENG</a>
+				</li>
+			</ul>
+			<div class="socials">
+				<ul class="socials__list">
+					<li class="socials__item"><a href="#" class="social__btn--fb">Facebook</a>
+					</li>
+					<li class="socials__item"><a href="#" class="social__btn--tw">Twitter</a>
+					</li>
+					<li class="socials__item"><a href="#" class="social__btn--vk">Vkontakte</a>
+					</li>
+				</ul>
+				<button class="social__btn--like">Лайкнуть</button>
+			</div>
+		</div>
+		<script src="assets/scripts/vendors.min.js"></script>
 		<script src="assets/scripts/all.min.js"></script>
 	</body>
 
