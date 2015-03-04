@@ -1,0 +1,12 @@
+{
+	"require":{
+		"php": ">=5.3",
+		"mnsami/composer-custom-directory-installer": "1.0.*",
+		"smottt/wideimage": "dev-master"
+	},
+	"extra": {
+		"installer-paths": {
+			"./vendor/wideimage/": ["smottt/wideimage"]
+		}
+	}
+}
