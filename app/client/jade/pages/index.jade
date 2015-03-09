@@ -22,19 +22,21 @@ block content
 							input(type='file' id='original-image' name='image').upload-block__input-file.js-input-file
 							input(type='text' placeholder="загрузите картинку..." disabled).upload-block__input-text.js-input-txt-file
 							.upload-block__button.js-upload-btn
-								img(src='../img/download.png')
+								i.icon-download
+								//- img(src='../img/download.png')
 						label(for='watermark').setting__name Водяной знак
 						.upload-block.js-upload-block
 							input(type='file' id='watermark' name='watermark').upload-block__input-file.js-input-file
 							input(type='text' placeholder="загрузите картинку..." disabled).upload-block__input-text.js-input-txt-file
 							.upload-block__button.js-upload-btn
-								img(src='../img/download.png')
+								//- img(src='../img/download.png')
+								i.icon-download
 					form(action='' method='').settings
 						.setting__position
 							.setting__name Положение
 								.switch-type
-									button(data-div='borders', type="button").btn--four.js-switch-btn 4
-									button(data-div='coordinates', type="button").btn--active.btn--one.js-switch-btn 1
+									//- button(data-div='borders', data-type="grid", type="button").btn--four.js-switch-btn 4
+									button(data-div='coordinates', data-type="one", type="button").btn--active.btn--one.js-switch-btn 1
 							.position__block.block--coordinates.active
 								.position__view
 									table.view__table
@@ -85,18 +87,18 @@ block content
 												td.table__cell--grid
 								.position__regulate
 									.regulate__block.block--vertical
-										input.input--data(type='text', name='borderY', value='1')
-										.regulate__trigger.trigger--borders
-											button.btn--up(data-border='y-b-up') &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;
-											button.btn--down(data-border='y-b-down') &Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;
+										input.input--data(type='text', name='borderY', value='1')#border_x
+										//- .regulate__trigger.trigger--borders
+										//- 	button.btn--up(data-border='y-b-up') &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;
+										//- 	button.btn--down(data-border='y-b-down') &Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;
 									.regulate__block.block--horizontal
-										input.input--data(type='text', name='borderX', value='1')
-										.regulate__trigger.trigger--borders
-											button.btn--up(data-border='x-b-up') &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;
-											button.btn--down(data-border='x-b-down') &Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;
+										input.input--data(type='text', name='borderX', value='1')#border_y
+										//- .regulate__trigger.trigger--borders
+										//- 	button.btn--up(data-border='x-b-up') &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;
+										//- 	button.btn--down(data-border='x-b-down') &Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;
 						.setting__opacity
 							.setting__name Прозрачность
 							.range-slider
 						.setting__buttons
-							button(type='reset' value='Сброс').setting__buttons-reset Сброс
 							button(type='submit' value='Скачать').setting__buttons-submit Скачать
+							button(type='reset' value='Сброс').setting__buttons-reset Сброс

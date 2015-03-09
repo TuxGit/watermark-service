@@ -18,6 +18,7 @@
   "dependencies": {
     "jquery": "~1.11",
     "jquery-ui": "latest",
-    "normalize-css": "latest"
+    "normalize-css": "latest",
+    "jquery-file-upload": "latest"
   }
 }

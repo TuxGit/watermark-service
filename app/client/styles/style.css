@@ -66,6 +66,7 @@ body {
 }
 .content__result .image {
   background-image: url(../img/test-picture.jpg);
+  background-size: cover;
   width: 650px;
   height: 535px;
   position: absolute;
@@ -74,9 +75,9 @@ body {
   z-index: 1;
 }
 .content__result .watermark {
-  background-image: url(../img/favicon.jpg);
-  width: 200px;
-  height: 200px;
+  background-image: url(../img/watermark.png);
+  width: 216px;
+  height: 223px;
   position: absolute;
   top: 0;
   left: 0;
@@ -171,8 +172,9 @@ body {
   float: left;
   position: relative;
   z-index: 100;
-  top: -1px;
-  left: 1px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #F56C63;
 }
 
 /* block position */
@@ -488,12 +490,12 @@ body {
 }
 
 .setting__buttons-reset {
-  float: left;
+  float: right;
   background-color: #c1cfd9;
 }
 
 .setting__buttons-submit {
-  float: right;
+  float: left;
   background-color: #f97e76;
 }
 
@@ -677,4 +679,8 @@ body {
 
 .social--open {
   transform: translate(0, 0);
+}
+
+i {
+  display: inline-block;
 }

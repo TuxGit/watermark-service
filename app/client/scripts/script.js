@@ -61,26 +61,64 @@ var common = {
 var App = {
     // image: null,
     // watermark: null,
+    defaults: {
+        image: {
+            r: 1,
+            width: 650,
+            height: 535,
+            el: $('.image'),
+            url: 'upload/image.jpg'
+        },
+        watermark: {
+            r: 1,
+            width: 216,
+            height: 223,
+            el: $('.watermark'),
+            url: 'upload/watermark.png'
+        }
+    },
     settings: {
         max_w: 650,
         max_h: 535
     },
-    image: {
-        width: 650,
-        height: 535,
-        el: $('.image')
-    },
-    watermark: {
-        width: 200,
-        height: 200,
-        el: $('.watermark')
+    image: null,
+    watermark: null,
+    border: {
+        x: 0,
+        y: 0
     },
     position: {
         top: 0,
         left: 0
     },
-    opacity: 100,
+    opacity: 1,
     type: "one",
+
+    init: function ()
+    {
+        this.image = this.defaults.image;
+        this.watermark = this.defaults.watermark;
+
+        $('.setting__buttons-reset').on('click', function () {
+            App.clearForm();
+        });
+
+        $('.setting__buttons-submit').on('click', function (e) {
+            e.preventDefault();
+            App.submitForm();
+        });
+
+        $('.table__cell').on('click', function (e) {
+            // console.log(e.target);
+            $el = $(e.target);
+            $('.table__cell').removeClass('cell--active');
+            $el.addClass('cell--active');
+            App.setPos({
+                x: $el.data('x'),
+                y: $el.data('y')
+            });
+        });
+    },
 
     setImg: function (type, data)
     {
@@ -91,18 +129,33 @@ var App = {
             // this.image.el.css('opacity', 1);
 
             var width = data.width, 
-                height = data.height;
+                height = data.height,
+                _r = 1;
             if ( (data.width > this.settings.max_w) || (data.width > this.settings.max_w) ) {
-                console.log('смаштабируй!');
+                // console.log('смаштабируй!');
+                _r = width/height;
+                if (_r > 1) {
+                    width = this.settings.max_w;
+                    height = Math.round(width/_r);
+                } else {
+                    height = this.settings.max_h;
+                    width = Math.round(height/_r);
+                }
+                //TODO - resize watermark
             }
+            this.image.r = _r;
             this.image.el.css('width', width);
             this.image.el.css('height', height);
+            this.image.el.css('background-image', 'url("/web/' + data.url + '")');
+            // TODO set max values for spinner, draggable
         } else if (type == 'watermark') {
             this.watermark = data;
+            this.watermark.r = _r;
             this.watermark.el = $('.watermark');
             this.watermark.el.css('background-image', data.url);
             this.watermark.el.css('width', data.width);
             this.watermark.el.css('height', data.height);
+            this.watermark.el.css('background-image', 'url("/web/' + data.url + '")');
         }
     },
 
@@ -164,6 +217,9 @@ var App = {
         // data-x="left" data-y="top" 
         // this.setPos({x: 0, y: 0});
         $('td').first().click();
+        $('form.upload').get(0).reset();
+        this.setImg('image', this.defaults.image);
+        this.setImg('watermark', this.defaults.watermark);
     },
 
     submitForm: function ()
@@ -171,23 +227,48 @@ var App = {
         var data = {
             x: this.position.left,
             y: this.position.top,
-            opacity: this.opacity
+            opacity: this.opacity*100,
+            type: this.type  //$('.js-switch-btn.btn--active').data('type')
         };
+        // if (this.image.r > 1)
+        data.x = Math.round(data.x*this.image.r);
+        data.y = Math.round(data.y*this.image.r);
 
         $.ajax({
             url: '/api/download',
-            type: 'GET',
+            type: 'POST', //GET
             dataType: 'json',
             data: data,
         })
-        .done(function() {
-            console.log("success");
+        .done(function(data, textStatus, jqXHR) {
+            console.log("server success:", data); // arguments
+            var url = '/web/' + data.url;
+            // location.replace(url);
+            window.location = '/api/download?file=' + data.url;
+            // App.downloadImg(url); //this. ...
+            App.clearForm();
         })
-        .fail(function() {
-            console.log("error");
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            console.log("server error");
         })
         
-    }
+    },
+
+    // downloadImg: function (url)
+    // {
+    //     url = 'http://wservice.loc/web/' + url;
+    //     // https://github.com/johnculviner/jquery.fileDownload
+    //     // http://johnculviner.com/jquery-file-download-plugin-for-ajax-like-feature-rich-file-downloads/
+    //     $.fileDownload(url, {  // '/url/to/download.pdf'
+    //         successCallback: function (url) {
+    //             console.log('You just got a file download dialog or ribbon for this URL :' + url);
+    //         },
+    //         failCallback: function (html, url) {
+    //             console.log('Your file download just failed for this URL:' + url + '\r\n' +
+    //             'Here was the resulting error HTML: \r\n' + html);
+    //         }
+    //     });
+    // }
 }
 window.App = App;
 
@@ -222,6 +303,8 @@ $.widget( "ui.spinner", $.ui.spinner, {
 $(document).ready(function() {
     common.initEvents();
 
+    App.init();
+
     // $('.ui-spinner-button').on('click', function(e) {
     //     e.preventDefault();
     //     // return this;
@@ -255,30 +338,11 @@ $(document).ready(function() {
             App.setPos({y: value});
     });
 
-    $('.setting__buttons-reset').on('click', function () {
-        App.clearForm();
-    });
-
-    $('.setting__buttons-submit').on('click', function (e) {
-        e.preventDefault();
-        App.submitForm();
-    });
-
-    $('.table__cell').on('click', function (e) {
-        // console.log(e.target);
-        $el = $(e.target);
-        $('.table__cell').removeClass('cell--active');
-        $el.addClass('cell--active');
-        App.setPos({
-            x: $el.data('x'),
-            y: $el.data('y')
-        });
-    });
-
+    
     // https://github.com/blueimp/jQuery-File-Upload/wiki/Basic-plugin
     $('#original-image').fileupload({
         dataType: 'json',
-        url: '/_loftschool/dz-2.3/api-upload.json',
+        url: '/api/upload',
         done: function (e, data) {
             // console.log(e, data);
             // $.each(data.result.files, function (index, file) {
@@ -301,7 +365,7 @@ $(document).ready(function() {
     });
     $('#watermark').fileupload({
         dataType: 'json',
-        url: '/_loftschool/dz-2.3/api-upload.json',
+        url: '/api/upload',
         done: function (e, data) {
             // console.log(e, data);
 
@@ -381,5 +445,37 @@ $(document).ready(function() {
     });
 
     // $('.ui-spinner a.ui-spinner-button').css('display','none');
+
+    // $( "#border_x" ).spinner({
+    //     min: 0,
+    //     // max: 100,
+    //     step: 1,
+    //     spin: function( event, ui ) 
+    //     {
+    //         // App.setPos({'x': ui.value});
+    //     },
+    //     change: function( event, ui ) 
+    //     {
+    //         // ui == {}
+    //         // var $el = $(event.target);
+    //         // App.setPos({'x': $el.spinner('value')});
+    //     }
+    // });
+
+    // $( "#border_y" ).spinner({
+    //     min: 0,
+    //     // max: 100,
+    //     step: 1,
+    //     spin: function( event, ui ) 
+    //     {
+    //         // App.setPos({'y': ui.value});
+    //     },
+    //     change: function( event, ui ) 
+    //     {
+    //         // ui == {}
+    //         // var $el = $(event.target);
+    //         // App.setPos({'y': $el.spinner('value')});
+    //     }
+    // });
 
 });

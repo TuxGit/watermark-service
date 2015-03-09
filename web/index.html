@@ -34,14 +34,14 @@
 									<div class="upload-block js-upload-block">
 										<input type="file" id="original-image" name="image" class="upload-block__input-file js-input-file">
 										<input type="text" placeholder="загрузите картинку..." disabled class="upload-block__input-text js-input-txt-file">
-										<div class="upload-block__button js-upload-btn"><img src="../img/download.png">
+										<div class="upload-block__button js-upload-btn"><i class="icon-download"></i>
 										</div>
 									</div>
 									<label for="watermark" class="setting__name">Водяной знак</label>
 									<div class="upload-block js-upload-block">
 										<input type="file" id="watermark" name="watermark" class="upload-block__input-file js-input-file">
 										<input type="text" placeholder="загрузите картинку..." disabled class="upload-block__input-text js-input-txt-file">
-										<div class="upload-block__button js-upload-btn"><img src="../img/download.png">
+										<div class="upload-block__button js-upload-btn"><i class="icon-download"></i>
 										</div>
 									</div>
 								</form>
@@ -49,8 +49,7 @@
 									<div class="setting__position">
 										<div class="setting__name">Положение
 											<div class="switch-type">
-												<button data-div="borders" type="button" class="btn--four js-switch-btn">4</button>
-												<button data-div="coordinates" type="button" class="btn--active btn--one js-switch-btn">1</button>
+												<button data-div="coordinates" data-type="one" type="button" class="btn--active btn--one js-switch-btn">1</button>
 											</div>
 										</div>
 										<div class="position__block block--coordinates active">
@@ -112,18 +111,10 @@
 											</div>
 											<div class="position__regulate">
 												<div class="regulate__block block--vertical">
-													<input type="text" name="borderY" value="1" class="input--data">
-													<div class="regulate__trigger trigger--borders">
-														<button data-border="y-b-up" class="btn--up">&Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;</button>
-														<button data-border="y-b-down" class="btn--down">&Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;</button>
-													</div>
+													<input type="text" name="borderY" value="1" id="border_x" class="input--data">
 												</div>
 												<div class="regulate__block block--horizontal">
-													<input type="text" name="borderX" value="1" class="input--data">
-													<div class="regulate__trigger trigger--borders">
-														<button data-border="x-b-up" class="btn--up">&Bcy;&ocy;&lcy;&softcy;&shcy;&iecy;</button>
-														<button data-border="x-b-down" class="btn--down">&Mcy;&iecy;&ncy;&softcy;&shcy;&iecy;</button>
-													</div>
+													<input type="text" name="borderX" value="1" id="border_y" class="input--data">
 												</div>
 											</div>
 										</div>
@@ -133,8 +124,8 @@
 										<div class="range-slider"></div>
 									</div>
 									<div class="setting__buttons">
-										<button type="reset" value="Сброс" class="setting__buttons-reset">Сброс</button>
 										<button type="submit" value="Скачать" class="setting__buttons-submit">Скачать</button>
+										<button type="reset" value="Сброс" class="setting__buttons-reset">Сброс</button>
 									</div>
 								</form>
 							</div>
