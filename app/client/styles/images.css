@@ -1,0 +1,109 @@
+.icon-sprite, .icon-arrow-h, .icon-arrow-v, .icon-download, .icon-fb, .icon-l-grid, .icon-l-one, .icon-like, .icon-point-dw, .icon-point-up, .icon-toggle, .icon-tw, .icon-vk {
+  background-image: url('../img/icon-s437d6f0c88.png');
+  background-repeat: no-repeat;
+}
+
+.icon-arrow-h {
+  background-position: 0 -27px;
+  height: 9px;
+  width: 29px;
+}
+
+.icon-arrow-v {
+  background-position: -21px -36px;
+  height: 30px;
+  width: 11px;
+}
+
+.icon-download {
+  background-position: 0 -36px;
+  height: 16px;
+  width: 21px;
+}
+
+.icon-fb {
+  background-position: 0 -289px;
+  height: 27px;
+  width: 15px;
+}
+.icon-fb:hover, .icon-fb.fb-hover {
+  background-position: -15px -289px;
+}
+
+.icon-l-grid {
+  background-position: 0 -159px;
+  height: 19px;
+  width: 19px;
+}
+.icon-l-grid:hover, .icon-l-grid.l-grid-hover {
+  background-position: 0 -140px;
+}
+.icon-l-grid:active, .icon-l-grid.l-grid-active {
+  background-position: 0 -178px;
+}
+
+.icon-l-one {
+  background-position: -13px -8px;
+  height: 19px;
+  width: 19px;
+}
+.icon-l-one:hover, .icon-l-one.l-one-hover {
+  background-position: 0 -121px;
+}
+.icon-l-one:active, .icon-l-one.l-one-active {
+  background-position: -13px -102px;
+}
+
+.icon-like {
+  background-position: 0 -348px;
+  height: 32px;
+  width: 26px;
+}
+.icon-like:hover, .icon-like.like-hover {
+  background-position: 0 -316px;
+}
+
+.icon-point-dw {
+  background-position: 0 -102px;
+  height: 8px;
+  width: 13px;
+}
+.icon-point-dw:hover, .icon-point-dw.point-dw-hover {
+  background-position: 0 -8px;
+}
+
+.icon-point-up {
+  background-position: 0 0;
+  height: 8px;
+  width: 13px;
+}
+.icon-point-up:hover, .icon-point-up.point-up-hover {
+  background-position: -13px 0;
+}
+
+.icon-toggle {
+  background-position: 0 -241px;
+  height: 24px;
+  width: 24px;
+}
+.icon-toggle:hover, .icon-toggle.toggle-hover {
+  background-position: 0 -265px;
+}
+
+.icon-tw {
+  background-position: 0 -219px;
+  height: 22px;
+  width: 28px;
+}
+.icon-tw:hover, .icon-tw.tw-hover {
+  background-position: 0 -197px;
+}
+
+.icon-vk {
+  background-position: 0 -66px;
+  height: 18px;
+  width: 32px;
+}
+.icon-vk:hover, .icon-vk.vk-hover {
+  background-position: 0 -84px;
+}

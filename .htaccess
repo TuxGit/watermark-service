@@ -1,0 +1,15 @@
+# Установка кодировки для проекта
+AddDefaultCharset UTF-8
+# Запрет на просмотр файлов в директориях
+Options -Indexes
+
+# Установка индексного файла для директории
+DirectoryIndex web/app.php
+
+RewriteEngine On
+# Если не файл
+RewriteCond %{REQUEST_FILENAME} !-f 
+# Если не директория
+RewriteCond %{REQUEST_FILENAME} !-d 
+# Запускаем index.php
+RewriteRule (.*) web/app.php

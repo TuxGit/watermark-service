@@ -1,0 +1,53 @@
+include ../helpers/mixins
+
++script([
+  'scripts/script.js'
+], bower_js)
++style([
+  'styles/fonts.css',
+  'styles/images.css',
+  'styles/style.css'
+], bower_css)
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+    
+    block title
+      
+    case env
+      when 'dev'
+        include ../partials/styles
+      when 'prod'
+        link(href="assets/styles/all.min.css", rel="stylesheet")
+    
+    //- base(href="/")
+
+    //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    //- WARNING: Respond.js doesn't work if you view the page via file://
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  body
+    .container
+      .wrapper
+        
+        block content
+
+      include ../partials/footer
+
+    include ../partials/social-btns
+
+    case env
+      when 'dev'
+        include ../partials/scripts
+      when 'prod'
+        script(src="assets/scripts/vendors.min.js")
+        script(src="assets/scripts/all.min.js")
+
+

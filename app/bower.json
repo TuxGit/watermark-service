@@ -1,0 +1,24 @@
+{
+  "name": "watermark.6log.ru",
+  "version": "0.1.0",
+  "description": "Wathermark Service",
+  "authors": [
+    "Tux"
+  ],
+  "license": "MIT",
+  "homepage": "http://wathermark.6log.ru",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11",
+    "jquery-ui": "latest",
+    "normalize-css": "latest",
+    "jquery-file-upload": "latest"
+  }
+}

@@ -1,0 +1,31 @@
+/*ROBOTO*/
+@font-face {
+  font-family: 'Roboto-light';
+  src: url("../fonts/roboto/light/roboto-light.eot");
+  src: url("../fonts/roboto/light/roboto-light.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/light/roboto-light.woff2") format("woff2"), url("../fonts/roboto/light/roboto-light.woff") format("woff"), url("../fonts/roboto/light/roboto-light.ttf") format("truetype"), url("../fonts/roboto/light/roboto-light.svg#robotolight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-medium';
+  src: url("../fonts/roboto/medium/roboto-medium.eot");
+  src: url("../fonts/roboto/medium/roboto-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/medium/roboto-medium.woff2") format("woff2"), url("../fonts/roboto/medium/roboto-medium.woff") format("woff"), url("../fonts/roboto/medium/roboto-medium.ttf") format("truetype"), url("../fonts/roboto/medium/roboto-medium.svg#robotomedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*SEGOE UI*/
+@font-face {
+  font-family: 'SegoeUI-light';
+  src: url("../fonts/segoe/segoeui-light.eot");
+  src: url("../fonts/segoe/segoeui-light.eot?#iefix") format("embedded-opentype"), url("../fonts/segoe/segoeui-light.woff") format("woff"), url("../fonts/segoe/segoeui-light.ttf") format("truetype"), url("../fonts/segoe/segoeui-light.svg#segoeui-light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*FIRA SANS*/
+@font-face {
+  font-family: 'Fira-sanslight';
+  src: url("../fonts/fira/firasans-light.eot");
+  src: url("../fonts/fira/firasans-light.eot?#iefix") format("embedded-opentype"), url("../fonts/fira/firasans-light.woff2") format("woff2"), url("../fonts/fira/firasans-light.woff") format("woff"), url("../fonts/fira/firasans-light.ttf") format("truetype"), url("../fonts/fira/firasans-light.svg#fira_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,9 @@
+.idea
+.task
+app/.sass-cache/
+app/composer
+app/composer.lock
+app/vendor/
+app/server/vendor/
+app/node_modules/
+app/client/bower_components/

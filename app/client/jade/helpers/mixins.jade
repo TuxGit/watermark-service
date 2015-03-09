@@ -1,0 +1,53 @@
+//- Blocking for links
+- var jv0 = 'javascript:void(0);';
+
+//- Build time for cache reset
+- var timestamp = new Date().getTime();
+
+
+
+- var pageScripts = pageScripts || [[], [], []];
+
+mixin renderScript(scripts)
+	each src in scripts
+		//- - src = (/^(https?:)?\/\//.test(src) ? src : 'assets/scripts/' + src) + '?' + timestamp;
+		//- if env =='prod' ...
+		- src = '../' + src;
+		script(src=src)
+
+mixin script()
+	- var args = arguments;
+	each scripts, i in args
+		each src in scripts
+			- var index = args[1] === true ? 2 : i === 0 ? 1 : 0;
+			if pageScripts[index].indexOf(src) === -1
+				- pageScripts[index].push(src);
+
+mixin scripts()
+	+renderScript([].concat.apply([], pageScripts))
+
+
+
+
+
+
+- var pageStyles = pageStyles || [[], [], []];
+
+mixin renderStyles(list)
+	each src in list
+		//- - src = (/^(https?:)?\/\//.test(src) ? src : 'assets/styles/' + src) + '?' + timestamp;
+		//- if env =='prod' ...
+		- src = '../' + src;
+		link(href=src rel="stylesheet")
+
+mixin style()
+	- var args = arguments;
+	each scripts, i in args
+		each src in scripts
+			- var index = args[1] === true ? 2 : i === 0 ? 1 : 0;
+			if pageStyles[index].indexOf(src) === -1
+				- pageStyles[index].push(src);
+
+mixin styles()
+	+renderStyles([].concat.apply([], pageStyles))
+
